@@ -1,0 +1,28 @@
+@import "../app.component.scss";
+
+header{
+    background-color: $primary-color;
+    display: flex;
+    justify-content: space-evenly;
+    .brand {
+        color: $white;
+        font-weight: 400;
+    }
+    .navigation-menu {
+        display: flex;
+        align-items: center;
+        ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            li {
+                color: $white;
+                padding-left: 3rem;
+                font-weight: 400;
+            }
+        }
+    }
+    .call-to-action {
+
+    }
+}
