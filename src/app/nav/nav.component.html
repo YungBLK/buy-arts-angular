@@ -1,14 +1,14 @@
 <nav class="navbar">
   <div class="container">
     <div>
-      <div class="logo">Artisty</div>
+      <div class="logo"><a routerLink="/artworks" routerLinkActive="active">Artisty</a></div>
     </div>
     <ul class="navigation-menu">
-      <li><a href="">Artworks</a></li>
-      <li><a href="">Artists</a></li>
-      <li><a href="">My Orders</a></li>
+      <li><a routerLink="/artworks" routerLinkActive="active">Artworks</a></li>
+      <li><a routerLink="/artists" routerLinkActive="active">Artists</a></li>
+      <li><a routerLink="myorders" routerLinkActive="active">My Orders</a></li>
       <li><app-search-input></app-search-input></li>
-      <li><a href="">Sign in</a></li>
+      <li><a routerLink="singin" routerLinkActive="active">Sign in</a></li>
       <li>
         <app-button
           [callToActionClasses]="callToActionClasses"
@@ -18,3 +18,5 @@
     </ul>
   </div>
 </nav>
+
+<router-outlet></router-outlet>

@@ -7,7 +7,7 @@
 
   .container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
   }
@@ -15,6 +15,10 @@
   .logo {
     font-size: $logo;
     font-weight: bold;
+  }
+
+  a:hover{
+    color: #9b9b9b;
   }
 
   ul {
