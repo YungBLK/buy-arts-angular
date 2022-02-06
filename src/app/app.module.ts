@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { IconsModule } from './icons/icons.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+// view
+
+// components
+import { NavComponent } from './nav/nav.component';
 import { ButtonComponent } from './button/button.component';
+import { SearchInputComponent } from './search-input/search-input.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    ButtonComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, NavComponent, ButtonComponent, SearchInputComponent],
+	imports: [BrowserModule, AppRoutingModule, IconsModule],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

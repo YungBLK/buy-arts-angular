@@ -1,19 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { InterfaceCallToActionButton } from './button.interface';
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+	selector: 'app-button',
+	templateUrl: './button.component.html',
+	styleUrls: ['./button.component.scss']
 })
-export class ButtonComponent implements OnInit {
-
-
+export class ButtonComponent {
   @Input() content = '';
-  @Input() isCallToAction = false;
+  @Input() callToActionClasses: InterfaceCallToActionButton = {
+    "primary-call-to-action": true,
+    "secondary-call-to-action": false,
+  };
 
   constructor() {}
-
-  ngOnInit(): void {
-  }
 
 }

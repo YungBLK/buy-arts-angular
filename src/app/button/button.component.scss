@@ -1,11 +1,18 @@
-@import "../app.component.scss";
+@import '../app.component.scss';
 
-.callToAction{
-    border: none;
-    border-radius: 8px;
-    background-color: $white;
-    padding: 0.8rem 3rem;
-    font-size: 16px;
-    font-weight: 400;
-    color: $primary-color;
+.primary-call-to-action {
+  border: 1px solid $primary-border-color;
+  background-color: transparent;
+  padding: 0.8rem 2.2rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: $primary-text-color;
+}
+.secondary-call-to-action {
+  border: 1px solid $primary-border-color;
+  background-color: transparent;
+  padding: 0.8rem 2.2rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: $primary-text-color;
 }

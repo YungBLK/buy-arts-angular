@@ -1,1 +1,31 @@
-@import "../styles.scss";
+@import '../styles.scss';
+
+.container {
+    margin: 0 auto;
+    padding: 0 30px;
+
+    // extra small
+    @media(max-width: 576px) { 
+        max-width: 100%;
+    }
+    // small
+    @media(min-width: 576px ) { 
+        max-width: 540px;
+    }
+    // medium
+    @media(min-width: 768px) { 
+        max-width: 720px;
+    }
+    // large
+    @media(min-width: 992px) { 
+        max-width: 960px;
+    }
+    // x-large
+    @media(min-width: 1200px) { 
+        max-width: 1140px;
+    }
+    // xx-large
+    @media(min-width: 1400px) { 
+        max-width: 1620px;
+    }
+}
