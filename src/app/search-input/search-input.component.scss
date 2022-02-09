@@ -1,16 +1,32 @@
-.search-input {
+@import '../app.component.scss';
 
+.search-input {
+    position: relative;
     input {
-        padding: 6px;
+        padding: 6px 36px 6px 6px;
         border: none;
         background-color: #BBBABA;
         font-size: 17px;
         border-radius: 10px;
+        color: $primary-text-color;
     }
+    .action-wrapper {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        right: 10px;
+        top: 0px;
+        bottom: 0px;
+        .button-submit-search{
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+    }
+
 
     .input-search-icon {
         position: relative;
-        right: 31px;
-        top: 6px;
+        cursor: pointer;
     }
 }

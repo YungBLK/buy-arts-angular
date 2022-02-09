@@ -15,10 +15,15 @@
     // medium
     @media(min-width: 768px) { 
         max-width: 720px;
+        
+    }
+    @media(max-width: 992px) { 
+        padding: 0;
     }
     // large
     @media(min-width: 992px) { 
         max-width: 960px;
+        padding: 0 30px;
     }
     // x-large
     @media(min-width: 1200px) { 
@@ -28,4 +33,11 @@
     @media(min-width: 1400px) { 
         max-width: 1520px;
     }
+
+    // @media (min-width: 769px) and (max-width: 991px) {
+    //   .primary-call-to-action {
+    //     padding: 0.8rem 1.2rem;
+    //   } 
+    // }
+
 }

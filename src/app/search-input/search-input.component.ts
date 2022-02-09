@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search-input',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-input.component.scss']
 })
 export class SearchInputComponent {
+  searchForm = new FormGroup({
+    appSearchControl: new FormControl(''),
+  })
 
-  constructor() { }
+  onSubmit() {
+    console.log("submitado", this.searchForm.value);
+  }
+
+  constructor() { 
+  }
 }

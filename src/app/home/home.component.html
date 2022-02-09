@@ -1,3 +1,22 @@
-<div class="container">
-    <p>home works!</p>
-</div>
+<header class="landing-page-banner">
+    <div class="container">
+        <div class="banner">
+            <h1>Art is beautiful, Art is Life, Buy Arts.</h1>
+            <p>
+              Browse our collection to find the masterpiece that you desire or Join us today to start selling. 
+            </p>
+            <div class="banner-actions">
+                <app-call-to-action
+                [callToActionClasses]="firstButtonCallToActionClasses"
+                [content]="firstButtonContent"
+                (buttonAction)="handleButtonClick()"
+                ></app-call-to-action>
+                <app-call-to-action
+                [callToActionClasses]="secondButtonCallToActionClasses"
+                [content]="secondButtonContent"
+                (buttonAction)="handleButtonClick()"
+                ></app-call-to-action>
+            </div>
+        </div>
+    </div>
+</header>

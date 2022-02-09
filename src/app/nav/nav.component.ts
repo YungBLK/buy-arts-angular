@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
 	selector: 'app-nav',
@@ -6,12 +7,19 @@ import { Component } from '@angular/core';
 	styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
-	ButtonContent = 'Register';
+	isMobileSize = false;
+	buttonContent = 'Register';
 	callToActionClasses = {
 		"primary-call-to-action": true,
 		"secondary-call-to-action": false,
 	};
-
-
-	constructor() {}
-}
+	
+	constructor(private router: Router) {}
+	
+	handleButtonClick() {
+		this.router.navigateByUrl('/register')
+	} 
+	handleMobileStyle() {
+		this.isMobileSize = !this.isMobileSize;
+	}
+ }

@@ -1,19 +1,22 @@
 <nav class="navbar">
   <div class="container">
-    <div>
-      <div class="logo"><a routerLink="/artworks" routerLinkActive="active">Artisty</a></div>
+    <div class="brand-wrapper">
+      <div class="logo"><a routerLink="/" routerLinkActive="active">Artisty</a></div>
+      <div class="menu-hamburguer" (click)="handleMobileStyle()"><i-feather class="input-search-icon" name="Menu"></i-feather></div>
     </div>
-    <ul class="navigation-menu">
-      <li><a routerLink="/artworks" routerLinkActive="active">Artworks</a></li>
-      <li><a routerLink="/artists" routerLinkActive="active">Artists</a></li>
-      <li><a routerLink="myorders" routerLinkActive="active">My Orders</a></li>
-      <li><app-search-input></app-search-input></li>
-      <li><a routerLink="singin" routerLinkActive="active">Sign in</a></li>
+    <ul class="navigation-menu" [class.navigation-menu-mobile]="isMobileSize">
+      <!-- <li class="close-wrapper"><i-feather class="input-search-icon" name="Menu"></i-feather></li> -->
+      <li><a (click)="handleMobileStyle()" routerLink="/artworks" routerLinkActive="active">Artworks</a></li>
+      <li><a (click)="handleMobileStyle()" routerLink="/artists" routerLinkActive="active">Artists</a></li>
+      <li><a (click)="handleMobileStyle()" routerLink="myorders" routerLinkActive="active">My Orders</a></li>
+      <li class="menu-app-search"><app-search-input></app-search-input></li>
+      <li><a (click)="handleMobileStyle()" routerLink="singin" routerLinkActive="active">Sign in</a></li>
       <li>
-        <app-button
+        <app-call-to-action
           [callToActionClasses]="callToActionClasses"
-          [content]="ButtonContent"
-        ></app-button>
+          [content]="buttonContent"
+          (buttonAction)="handleButtonClick()"
+        ></app-call-to-action>
       </li>
     </ul>
   </div>

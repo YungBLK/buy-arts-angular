@@ -1,4 +1,10 @@
 <div class="search-input">
-    <input type="text" />
-    <i-feather class="input-search-icon" name="Search"></i-feather>
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="appSearchControl" >
+        <div class="action-wrapper">
+            <button class="button-submit-search">
+                <i-feather class="input-search-icon" name="Search"></i-feather>
+            </button>
+        </div>
+    </form>
 </div>
