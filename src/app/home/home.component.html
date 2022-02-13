@@ -1,12 +1,13 @@
 <header class="landing-page-banner">
     <div class="container">
         <div class="banner">
-            <h1>Art is beautiful, Art is Life, Buy Arts.</h1>
-            <p>
+            <h1 class="headline">Art is beautiful, Art is Life, Buy Arts.</h1>
+            <p class="headline-3">
               Browse our collection to find the masterpiece that you desire or Join us today to start selling. 
             </p>
             <div class="banner-actions">
                 <app-call-to-action
+                class="mr-2"
                 [callToActionClasses]="firstButtonCallToActionClasses"
                 [content]="firstButtonContent"
                 (buttonAction)="handleButtonClick()"
@@ -18,5 +19,214 @@
                 ></app-call-to-action>
             </div>
         </div>
+
     </div>
 </header>
+<section class="landing-page-search-container" id="search-section">
+    <div class="container">
+            <form class="search-form">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-4 mr-1">
+                        <input class="form-control" placeholder="Search art and artists based on category" />
+                    </div>
+                    <div class="col-4 mr-1">
+                        <select class="form-select" name="" id="">
+                            <option value="">Price range</option>
+                        </select>
+                    </div>
+                    <div class="col-1">
+                        <app-call-to-action
+                        [callToActionClasses]="secondButtonCallToActionClasses"
+                        [content]="searchButtonContent"
+                        (buttonAction)="handleButtonClick()"
+                        ></app-call-to-action>
+                    </div>
+                </div>
+            </form>
+        </div>
+</section>
+<main class="landing-page-content">
+    <section class="feature-artworks">
+         <div class="container">
+            <div class="section-header">
+                <h3 class="headline-2">Feature Artworks</h3>
+                <app-call-to-action
+                [callToActionClasses]="secondButtonCallToActionClasses"
+                [content]="expandContentButton"
+                (buttonAction)="handleButtonClick()"
+                ></app-call-to-action>
+            </div>
+            <div class="section-list mt-3">
+                <div class="art-card mr-1" *ngFor="let art of appData.artworks">
+                    <!-- [src]="art.img" alt="Art preview" -->
+                    <div class="image-wrapper"></div>
+                    <h4 class="subtitle-1 tms-1">{{art.name}}</h4>
+                    <p class="subtitle-1 tms-1">{{art.artist}}</p>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section class="top-artirts">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="headline-2">Top Artists</h3>
+                    <app-call-to-action
+                    [callToActionClasses]="secondButtonCallToActionClasses"
+                    [content]="expandContentButton"
+                    (buttonAction)="handleButtonClick()"
+                    ></app-call-to-action>
+                </div>
+                <div class="section-list mt-3">
+                    <div class="art-card mr-1" *ngFor="let person of appData.artirts">
+                        <!-- [src]="person.img" alt="Art preview" -->
+                        <div class="image-wrapper border-rounded"></div>
+                        <h4 class="subtitle-1 text-center tms-2">{{person.name}}</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="headline-2">Categories</h3>
+                    <app-call-to-action
+                    [callToActionClasses]="secondButtonCallToActionClasses"
+                    [content]="expandContentButton"
+                    (buttonAction)="handleButtonClick()"
+                    ></app-call-to-action>
+                </div>
+                <div class="mosaic mt-3">
+                    <div class="laydown">
+                        <div class="laydown-img"></div>
+                        <div class="laydown-img"></div>
+                    </div>
+                    <div class="standup">
+                        <div class="standup-img"></div>
+                    </div> 
+                </div>
+                <div class="mosaic-invert mb-3">
+                    <div class="standup">
+                        <div class="standup-img"></div>
+                    </div> 
+                    <div class="laydown">
+                        <div class="laydown-img"></div>
+                        <div class="laydown-img"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="who-we-are">
+            <div class="container">
+                <div class="section-header-center">
+                    <h3 class="headline-2">Who we are</h3>
+                </div>
+                <div class="who-we-are-content">
+                    <div class="who-we-are-text">
+                    <p>
+                        Up in the morning, up in the evening
+                        Picking up clocks when the birds come back to eat, oh, to eat
+                        Up on the mountain, down in the king's lair
+                        Pushing these blocks in the heat of the afternoon, oh, afternoon
+                    </p>
+                    <p>
+                        We were never welcome here
+                        We were never welcome here at all, no
+
+                        Oh, it's who we are
+                        Doesn't matter if we've gone too far
+                        Doesn't matter if it's all okay
+                        Doesn't matter if it's not our day
+                        Oh, won't you save us? What we are?
+                    </p>
+                    <p>
+                        Don't look clear, it's all uphill from here, oh
+                        Up in the attic, down in the cellar
+                        Lost in the static, coming back for more, oh, for more
+                        Out with the reason, in with the season
+                        Taking down names in my book of jealousy, jealousy
+                    </p>
+                    </div>
+                </div>
+                <div class="who-we-are-actions">
+                    <app-call-to-action
+                    [callToActionClasses]="firstButtonCallToActionClasses"
+                    [content]="expandTextButton"
+                    (buttonAction)="handleButtonClick()"
+                    ></app-call-to-action>
+                </div>
+            </div>
+        </section>
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-header-center">
+                    <h3 class="headline-2">How it works</h3>
+                </div>
+                <div class="how-it-works-content">
+                    <div class="how-it-works-path-customer">
+                        <h4 class="headline-2 mb-1">Art Lover ?</h4>
+                        <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
+                            Browse Colletions
+                        </button>
+                        <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
+                            Add to Cart
+                        </button>
+                        <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
+                            Make Payment
+                        </button>
+                        <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
+                            Share
+                        </button>
+                    </div>
+                    <div class="division"></div>
+                    <div class="how-it-works-path-artist">
+                        <h4 class="headline-2 mb-1">Artist</h4>
+                        <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
+                            Sign up
+                        </button>
+                        <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
+                            Update your profile
+                        </button>
+                        <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
+                            Post Art
+                        </button>
+                        <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
+                            Start Earning
+                        </button>
+                    </div>
+                </div>
+                <div class="how-it-works-actions">
+                    <app-call-to-action
+                    [callToActionClasses]="firstButtonCallToActionClasses"
+                    [content]="joinUsButtonContent"
+                    (buttonAction)="handleButtonClick()"
+                    ></app-call-to-action>
+                </div>
+            </div>
+        </section>
+        <section class="newsletter">
+            <div class="container">
+                <form action="">
+                    <div class="newsletter-content">
+                        <div class="newsletter-text">
+                            <h4 class="headline-2">Subscribe to our news letter</h4>
+                            <p>
+                                Be the first to know about art deals and
+                                other art related information
+                            </p>
+                        </div>
+                        <div class="newsletter-input">
+                            <input class="form-control-newsletter" type="text">
+                            <button class="terciary-call-to-action">Subscribe</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+   
+</main>
+<footer>
+    <div class="container">
+        <div class="footer"></div>
+    </div>
+</footer>
+

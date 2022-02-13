@@ -1,0 +1,56 @@
+// font-sizes scss var
+$font-size-base: 16px;
+$logo: 24px;
+
+.headline {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 0;
+
+}
+.headline-2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: auto;
+  letter-spacing: 0;
+}
+.headline-3 {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 3%;
+}
+.headline-4 {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.subtitle-1 {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.subtitle-2 {
+}
+.body-1 {
+}
+.body-2 {
+}
+.button {
+}
+.caption {
+}
+.overline {
+}
+
+// utilities
+.text-center {
+  text-align: center;
+}
+// texts-spacing
+.tms-1 {
+  margin-top: $initial-margin * 2;
+}
+.tms-2 {
+  margin-top: $initial-margin * 3;
+}

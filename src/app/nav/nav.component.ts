@@ -10,8 +10,8 @@ export class NavComponent {
 	isMobileSize = false;
 	buttonContent = 'Register';
 	callToActionClasses = {
-		"primary-call-to-action": true,
-		"secondary-call-to-action": false,
+		"primary-call-to-action": false,
+		"secondary-call-to-action": true,
 	};
 	
 	constructor(private router: Router) {}

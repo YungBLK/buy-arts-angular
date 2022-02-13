@@ -1,0 +1,8 @@
+$border-radius-round: 10rem; 
+
+
+.border-rounded {
+    border-radius: $border-radius-round;
+    min-width: 272px;
+    min-height: 272px;
+}

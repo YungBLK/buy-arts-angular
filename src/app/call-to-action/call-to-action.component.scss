@@ -1,16 +1,6 @@
 @import '../app.component.scss';
 
 .primary-call-to-action {
-  border: 1px solid $primary-border-color;
-  background-color: transparent;
-  padding: 0.8rem 2.2rem;
-  font-size: 16px;
-  font-weight: 400;
-  color: $primary-text-color;
-  cursor: pointer;
-  margin-right: 30px;
-}
-.secondary-call-to-action {
   border: 1px solid $support-color;
   background-color: $support-color;
   padding: 0.8rem 2.2rem;
@@ -18,7 +8,16 @@
   font-weight: 400;
   color: $primary-text-color;
   cursor: pointer;
-  margin-right: 30px;
+  
+}
+.secondary-call-to-action {
+  border: 1px solid $primary-border-color;
+  background-color: transparent;
+  padding: 0.8rem 2.2rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: $primary-text-color;
+  cursor: pointer;
 }
 
 @media(max-width: 992px) {
