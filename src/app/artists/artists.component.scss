@@ -1,1 +1,29 @@
 @import '../app.component.scss';
+
+.artist-banner{
+    background-color: $secondary-color;
+    height: 373px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+
+    }
+    .banner {
+        max-width: 73%;
+        margin: 0 auto;
+        h1 {
+            font-size: 50px;
+            margin-top: 0;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 24px;
+        }
+    }
+    .banner-actions{
+        display: flex;
+        justify-content: center;
+    }
+}

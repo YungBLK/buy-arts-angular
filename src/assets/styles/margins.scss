@@ -1,0 +1,18 @@
+// margins variables
+$initial-margin: 5px;
+
+.m-0 {
+    margin: 0;
+}
+.m-1 {
+    margin: calc($initial-margin * 5);
+}
+.m-2 {
+    margin: calc($initial-margin * 6);
+}
+.m-3 {
+    margin: calc($initial-margin * 7);
+}
+.m-4 {
+    margin: calc($initial-margin * 8);
+}
