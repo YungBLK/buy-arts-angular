@@ -19,9 +19,32 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 
+import {
+	DEFAULT_BREAKPOINTS,
+	ImageFormat,
+	NgxPictureModule
+  } from 'ngx-picture';
+
+export function srcInterpolator(
+  url: string,
+  imageFormat: ImageFormat,
+  breakpoint: string,
+  breakpointValue: number
+) {
+  return `${url.split('.')[0]}-${breakpointValue}.${
+    imageFormat === 'jpeg' ? 'jpg' : 'webp'
+  }`;
+}
+
 @NgModule({
 	declarations: [AppComponent, NavComponent, CallToActionComponent, SearchInputComponent, HomeComponent, ArtworksComponent, ArtistsComponent, MyOrdersComponent, SignInComponent, RegisterComponent],
-	imports: [BrowserModule, AppRoutingModule, IconsModule, FormsModule, ReactiveFormsModule],
+	imports: [BrowserModule, AppRoutingModule, IconsModule, FormsModule, ReactiveFormsModule,
+		NgxPictureModule.forRoot({
+			breakpoints: DEFAULT_BREAKPOINTS, 
+			imageFormats: ['webp', 'jpeg'], 
+			srcInterpolator
+		  })
+	],
 	providers: [],
 	bootstrap: [AppComponent]
 })

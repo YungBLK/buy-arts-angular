@@ -1,37 +1,45 @@
 <header class="landing-page-banner">
-    <div class="container">
-        <div class="banner">
-            <h1 class="headline">Art is beautiful, Art is Life, Buy Arts.</h1>
-            <p class="headline-3">
-              Browse our collection to find the masterpiece that you desire or Join us today to start selling. 
-            </p>
-            <div class="banner-actions">
-                <app-call-to-action
-                class="mr-2"
-                [callToActionClasses]="firstButtonCallToActionClasses"
-                [content]="firstButtonContent"
-                (buttonAction)="handleButtonClick()"
-                ></app-call-to-action>
-                <app-call-to-action
-                [callToActionClasses]="secondButtonCallToActionClasses"
-                [content]="secondButtonContent"
-                (buttonAction)="handleButtonClick()"
-                ></app-call-to-action>
+    <div class="background-linear">
+        <div class="container">
+            <div class="banner">
+                <div class="banner-title">
+                    <h1 class="h900">Art is beautiful, Art is Life, Buy Arts.</h1>
+                </div>
+                <div class="banner-subtitle">
+                    <p class="h700 mt-4">
+                        Browse our collection to find the masterpiece that you desire or Join us today to start selling. 
+                    </p>
+                </div>
+                <div class="banner-actions">
+                    <app-call-to-action
+                    class="banner-first-button mr-2"
+                    [callToActionClasses]="firstButtonCallToActionClasses"
+                    [content]="firstButtonContent"
+                    (buttonAction)="handleButtonClick()"
+                    ></app-call-to-action>
+                    <app-call-to-action
+                    class="banner-second-button"
+                    [callToActionClasses]="secondButtonCallToActionClasses"
+                    [content]="secondButtonContent"
+                    (buttonAction)="handleButtonClick()"
+                    ></app-call-to-action>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
 </header>
 <section class="landing-page-search-container" id="search-section">
     <div class="container">
-            <form class="search-form">
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="search-form">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-4 mr-1">
-                        <input class="form-control" placeholder="Search art and artists based on category" />
+                        <input class="form-control" formControlName="search" placeholder="Search art and artists based on category" />
                     </div>
                     <div class="col-4 mr-1">
-                        <select class="form-select" name="" id="">
-                            <option value="">Price range</option>
+                        <select class="form-select" formControlName="priceRange">
+                            <option value="">Price Range</option>
+                            <option *ngFor="let range of appData.prices" [value]="range.id">{{formatPriceRange(range)}}</option>
                         </select>
                     </div>
                     <div class="col-1">
@@ -46,49 +54,58 @@
         </div>
 </section>
 <main class="landing-page-content">
-    <section class="feature-artworks">
+        <section class="feature-artworks">
          <div class="container">
             <div class="section-header">
-                <h3 class="headline-2">Feature Artworks</h3>
+                <h3 class="h800">Feature Artworks</h3>
                 <app-call-to-action
+                class="artwork-expand-button"
                 [callToActionClasses]="secondButtonCallToActionClasses"
                 [content]="expandContentButton"
                 (buttonAction)="handleButtonClick()"
                 ></app-call-to-action>
             </div>
             <div class="section-list mt-3">
-                <div class="art-card mr-1" *ngFor="let art of appData.artworks">
-                    <!-- [src]="art.img" alt="Art preview" -->
+                <div class="art-card mr-4" *ngFor="let art of appData.artworks">
                     <div class="image-wrapper"></div>
-                    <h4 class="subtitle-1 tms-1">{{art.name}}</h4>
-                    <p class="subtitle-1 tms-1">{{art.artist}}</p>
+                    <h4 class="art-card-title h500 mt-2">{{art.name}}</h4>
+                    <p class="art-card-subtitle h500 mt-2">{{art.artist}}</p>
                 </div>
             </div>
         </div>
         </section>
+  
         <section class="top-artirts">
             <div class="container">
                 <div class="section-header">
-                    <h3 class="headline-2">Top Artists</h3>
+                    <h3 class="h800">Top Artists</h3>
                     <app-call-to-action
+                    class="artwork-expand-button"
                     [callToActionClasses]="secondButtonCallToActionClasses"
                     [content]="expandContentButton"
                     (buttonAction)="handleButtonClick()"
                     ></app-call-to-action>
                 </div>
                 <div class="section-list mt-3">
-                    <div class="art-card mr-1" *ngFor="let person of appData.artirts">
-                        <!-- [src]="person.img" alt="Art preview" -->
-                        <div class="image-wrapper border-rounded"></div>
-                        <h4 class="subtitle-1 text-center tms-2">{{person.name}}</h4>
+                    <div class="art-card mr-4" *ngFor="let person of appData.artirts">
+                        <div class="image-wrapper-artists border-rounded"></div>
+                        <h4 class="art-card-title h500 text-center mt-2">{{person.name}}</h4>
                     </div>
                 </div>
             </div>
         </section>
+        
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer"></div>
+        </div>
+    </footer>
+            <!-- 
         <section class="categories">
             <div class="container">
                 <div class="section-header">
-                    <h3 class="headline-2">Categories</h3>
+                    <h3 class="h800">Categories</h3>
                     <app-call-to-action
                     [callToActionClasses]="secondButtonCallToActionClasses"
                     [content]="expandContentButton"
@@ -118,7 +135,7 @@
         <section class="who-we-are">
             <div class="container">
                 <div class="section-header-center">
-                    <h3 class="headline-2">Who we are</h3>
+                    <h3 class="h800">Who we are</h3>
                 </div>
                 <div class="who-we-are-content">
                     <div class="who-we-are-text">
@@ -159,11 +176,11 @@
         <section class="how-it-works">
             <div class="container">
                 <div class="section-header-center">
-                    <h3 class="headline-2">How it works</h3>
+                    <h3 class="h800">How it works</h3>
                 </div>
                 <div class="how-it-works-content">
                     <div class="how-it-works-path-customer">
-                        <h4 class="headline-2 mb-1">Art Lover ?</h4>
+                        <h4 class="h800 mb-1">Art Lover ?</h4>
                         <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
                             Browse Colletions
                         </button>
@@ -179,7 +196,7 @@
                     </div>
                     <div class="division"></div>
                     <div class="how-it-works-path-artist">
-                        <h4 class="headline-2 mb-1">Artist</h4>
+                        <h4 class="h800 mb-1">Artist</h4>
                         <button class="secondary-call-to-action" (buttonAction)="handleButtonClick()">
                             Sign up
                         </button>
@@ -203,30 +220,7 @@
                 </div>
             </div>
         </section>
-        <section class="newsletter">
-            <div class="container">
-                <form action="">
-                    <div class="newsletter-content">
-                        <div class="newsletter-text">
-                            <h4 class="headline-2">Subscribe to our news letter</h4>
-                            <p>
-                                Be the first to know about art deals and
-                                other art related information
-                            </p>
-                        </div>
-                        <div class="newsletter-input">
-                            <input class="form-control-newsletter" type="text">
-                            <button class="terciary-call-to-action">Subscribe</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-   
+       
 </main>
-<footer>
-    <div class="container">
-        <div class="footer"></div>
-    </div>
-</footer>
+ -->
 

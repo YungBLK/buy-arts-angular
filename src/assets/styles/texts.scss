@@ -2,55 +2,50 @@
 $font-size-base: 16px;
 $logo: 24px;
 
-.headline {
-  font-size: 50px;
-  font-weight: bold;
-  letter-spacing: 0;
+.h900 {
+  font-size: 35px;
+  line-height: 40px;
+}
+.h800 {
+  font-size: 29px;
+  line-height: 32px;
+}
+.h700 {
+  font-size: 23px;
+  line-height: 28px;
+  @media(max-width: 400px) { 
+    font-size: 16px;
+  }
+}
+.h600 {
+  font-size: 20px;
+  line-height: 24px;
+}
+.h500 {
+  font-size: 16px;
+  line-height: 20px;
+}
+.h400 {
+  font-size: 14px;
+  line-height: 16px;
+}
+.h300 {
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.h200 {
+  font-size: 12px;
+  line-height: 16px;
+}
+.h100 {
+  font-size: 11px;
+  line-height: 16px;
+}
 
-}
-.headline-2 {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: auto;
-  letter-spacing: 0;
-}
-.headline-3 {
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 3%;
-}
-.headline-4 {
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-.subtitle-1 {
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-.subtitle-2 {
-}
-.body-1 {
-}
-.body-2 {
-}
-.button {
-}
-.caption {
-}
-.overline {
-}
 
 // utilities
 .text-center {
   text-align: center;
 }
-// texts-spacing
-.tms-1 {
-  margin-top: $initial-margin * 2;
-}
-.tms-2 {
-  margin-top: $initial-margin * 3;
-}
+

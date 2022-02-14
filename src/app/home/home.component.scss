@@ -1,8 +1,16 @@
 @import '../app.component.scss';
 
 .landing-page-banner{
+    background-image: url("../../assets/images/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    .background-linear{
+        background: radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0.453125) 43.75%, rgba(0, 0, 0, 0.421875) 57.81%, rgba(0, 0, 0, 0) 100%);
+    }
+
     background-color: $secondary-color;
-    height: 573px;
+    height: 587px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,17 +19,41 @@
     }
     .banner {
         text-align: center;
+        color: $white;
+        .banner-title {
+            max-width: 555px;
+            margin: 0 auto;
+        }
+        .banner-subtitle{
+            max-width: 731px;
+            margin: 0 auto;
+        }
         .banner-actions{
             display: flex;
             justify-content: center;
+            @media(max-width: 576px) { 
+                flex-direction: column;
+                .banner-second-button {
+                    order: 1;
+                    margin-bottom: 0.5rem;
+                }
+                .banner-first-button {
+                    order: 2;
+                    margin-right: 0px;
+                }
+            }
         }   
     }
 }
 
 .landing-page-search-container {
-    box-shadow: 0px 1px 21px #d0cece;
+    background-color: $primary-color;
+    box-shadow: 0px 1px 21px $primary-color;
     padding-top: 27px;
     padding-bottom: 27px;
+    @media(max-width: 768px) { 
+       display: none;
+    }
 }
 
 .landing-page-content {
@@ -31,13 +63,33 @@
     .who-we-are,
     .how-it-works,
     .newsletter  {
-        color: $primary-text-color;
+        background-color: #1ed760;
+        color: $primary-color;
         margin-top: 3rem;
         padding: 3rem 0;
         .section-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @media(max-width: 380px) { 
+                padding: 0 1.2rem;
+                .artwork-expand-button {
+                    display: none;
+                }
+            }
+            @media(min-width: 380px) and (max-width: 768px) { 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .artwork-expand-button {
+                    display: none;
+                }
+            }
+            @media (min-width: 992px) and (max-width: 1400px) {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
         }
         .section-header-center {
             display: flex;
@@ -45,17 +97,96 @@
         }
         .section-list{
             display: flex;
+            flex-wrap: wrap;
             .art-card {
+                margin-right: 1.5rem;
                 .image-wrapper {
-                    min-width: 272px;
-                    min-height: 260px;
-                    max-height: 260px;
-                    background-color: #d0cece;
+                    min-width: 347px;
+                    min-height: 347px;
+                    max-height: 347px;
+                    background-color: #1db95e;
+                    width: 100%;
+                    height: 100%;
+                }
+                .image-wrapper-artists {
+                    min-width: 347px;
+                    min-height: 347px;
+                    max-height: 347px;
+                    background-color: $primary-color;
                     width: 100%;
                     height: 100%;
                 }
             }
+            & .art-card:last-child {
+                margin-right: 0;
+            }
+            @media(max-width: 380px) { 
+                flex-direction: column;
+                padding: 0 1.2rem;
+                .art-card {
+                    .image-wrapper, .image-wrapper-artists {
+                        display: none;
+                    }
+                    .art-card-title {
+                        text-align: unset;
+                     }
+                    .art-card-subtitle {
+                       display: none;
+                    }
+                }
+            }
+            @media(min-width: 380px) and (max-width: 576px) { 
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 1rem;
+                .art-card {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    margin-right: 0;
+                    margin-bottom: 1rem;
+                    .art-card-title {
+                        position: absolute;
+                        left: 8rem;
+                        margin-bottom: 5px;
+                    }
+                    .art-card-subtitle {
+                        position: absolute;
+                        left: 8rem;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+            @media(min-width: 576px) and (max-width: 992px) { 
+                flex-direction: column;
+                justify-content: center;
+                padding: 0;
+                .art-card {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    margin-right: 0;
+                    margin-bottom: 1rem;
+                    .art-card-title {
+                        position: absolute;
+                        left: 8rem;
+                        margin-bottom: 5px;
+                    }
+                    .art-card-subtitle {
+                        position: absolute;
+                        left: 8rem;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+            @media (min-width: 992px) and (max-width: 1400px) {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0;
+                & .art-card:last-child {
+                    margin-right: 1.5rem;
+                }
+            }
         }
+        
         .mosaic {
             display: flex;
             justify-content: center;
@@ -170,26 +301,29 @@
         
     }
 
-    .top-artirts, .who-we-are, .newsletter {
-        background-color: #F6F6F6;
+    .top-artirts, .who-we-are, .newsletter, .categories {
+        background-color: #1db95e;
     }
-    
+  
+    @media(max-width: 992px) { 
+       padding: 0;
+    }
 }
 
 footer {
     width: 100%;
     height: 380px;
-    background-color: #DFDFDF;    
+    background-color: $primary-color;    
 }
 
 .secondary-call-to-action {
-    border: 1px solid $primary-border-color;
-    background-color: transparent;
+    border: 1px solid $white;
+    background-color: $primary-color;
     padding: 0.8rem 2.2rem;
     width: 100%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    color: $primary-text-color;
+    color: $white;
     cursor: pointer;
     margin-bottom: 1.3rem; 
 }
@@ -214,7 +348,7 @@ footer {
     border: 1px solid #828282;
     background-color: transparent;
     padding: 0.8rem;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     position: absolute;
     color: #373737;
